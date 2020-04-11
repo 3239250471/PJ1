@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="./Home.css" rel="stylesheet" type="text/css">
+    <title>
+    上传页
+</title>
+</head>
+ 
+<body>
+<script> function uploadImg(file,imgNum){
+    var widthImg = 150; //显示图片的width
+    var heightImg = 150; //显示图片的height
+    var div = document.getElementById(imgNum);
+    if (file.files && file.files[0]){
+        div.innerHTML ='<img id="upImg"  >'; //生成图片
+        var img = document.getElementById('upImg'); //获得用户上传的图片节点
+        img.onload = function(){
+            img.width = widthImg;
+            img.height = heightImg;
+        };
+        var reader = new FileReader(); //判断图片是否加载完毕
+        reader.onload = function(evt){
+            if(reader.readyState === 2){ //加载完毕后赋值
+                img.src = evt.target.result;
+            }
+        };
+        reader.readAsDataURL(file.files[0]);
+    }
+}
+
+</script>
+<header>
+    <nav>
+        <a href="./Home.html">首页</a>
+        <a href="./Browser.html">浏览页</a>
+        <a href="./Search.html">搜索页</a>
+        <div class="dorp" id="rig">
+
+            <div >个人中心</div>
+
+            <div   class="dorp_con">
+                <p><a id="a1" href="upload.html"><mark>上传</mark></a></p>
+                <p><a id ="a2" href="my_photo.html">我的照片</a></p>
+                <p><a href="favor.html">我的收藏</a></p>
+                <p><a id="a4" href="../index.html">登入</a></p>
+            </div>
+        </div><!--导航栏内容-->
+    </nav></header>
+<div class="Right1" >
+        <div id="preview" class="Right">
+            <img src="../img/未上传.png" alt="" id="imghead5" height="150" width="200" />
+        </div>
+        <div class="yanziRight">
+            <input name="evidence" onchange="uploadImg(this,'preview')" type="file" class="yanzRight" value="上传图片"/>
+            <span class="dui" id="imgOrder_dui" ></span>
+        </div>
+        </div>
+<div class="Right2">
+    <p>
+        图片标题：<br>
+    </p>
+
+    <label>
+        <input type="text"><!--设置文本框-->
+    </label>
+    <p>
+    图片描述：<br>
+</p><label>
+    <input type="text" style="height: 100px;width: 500px"><!--设置文本框-->
+</label>
+    <p>
+        拍摄国家：<br>
+    </p>
+    <label>
+        <input type="text"><!--设置文本框-->
+    </label>
+    <p>
+        拍摄城市：<br>
+    </p><label>
+    <input type="text">
+</label><br>
+    <input type="button" class="upload" value="上传" onclick=window.location.href="./my_photo.html" /><!--上传按钮并相应-->
+</div>
+
+
+
+</body><footer style="
+     bottom: 0;
+     width: 80%;
+     height: 30px;/*脚部的高度*/
+     left: 200px;
+     clear:both;">
+    <p>Posted by:19302010047</p>
+    <p> Contact imformation :<a href="mailto:19302010047@fudan.edu.cn">19302010047@fudan.edu.cn</a>.</p>
+    <P>备案号：沪19302010047</P>
+</footer>
+</html>

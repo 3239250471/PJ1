@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./Home.css" rel="stylesheet" type="text/css"><title>
+    首页
+</title>
+    <script>
+        <!--拖动滚动条或滚动鼠标轮;-->
+        window.onscroll=function(){
+            if(document.body.scrollTop||document.documentElement.scrollTop>0){
+                document.getElementById('rTop').style.display="block"
+            }else{
+                document.getElementById('rTop').style.display="none"
+            }
+        };
+        <!--点击“回到顶部”按钮-->
+        function toTop(){
+            window.scrollTo('0','0');
+            document.getElementById('rTop').style.display="none"
+        }
+    </script>
+</head>
+<body>
+<header>
+
+        <nav>
+    <a href="./Home.html"><mark>首页</mark></a>
+    <a href="./Browser.html">浏览页</a>
+    <a href="./Search.html">搜索页</a>
+    <div class="dorp" id="rig">
+
+        <div >个人中心</div>
+
+        <div   class="dorp_con">
+            <p><a id="a1" href="upload.html">上传</a></p>
+            <p><a id ="a2" href="my_photo.html">我的照片</a></p>
+            <p><a href="favor.html">我的收藏</a></p>
+            <p><a id="a4" href="../index.html">登入</a></p>
+        </div>
+        <!--导航栏内容-->
+    </div>
+</nav>
+</header><div class="home1">
+
+    <a href="./Detail.html"><img src="../img/头图.jpg" class="img1"  alt="图片"/></a><!--插入头图-->
+    <div class="home2">
+    <div class="home" style="float: left"><!--设置小图片-->
+       <div class="homeimg" onclick="window.open('./Detail.html','_self')"></div> <div class="right1"><h3>教堂 </h3><div>坐落于美国，举世闻名 </div></div></div>
+        <div class="home" style="float: left"><!--设置小图片-->
+            <div class="homeimg1" onclick="window.open('./Detail.html','_self')"></div> <div class="right1"><h3>大钟 </h3><div>位于英国，历史悠久</div></div></div>
+        <div class="home" style="float: left"><!--设置小图片-->
+            <div class="homeimg2" onclick="window.open('./Detail.html','_self')"></div> <div class="right1"><h3>迪士尼公园</h3> <div>位于美国，充满乐趣 </div> </div></div>
+        <div class="home" style="float: left"><!--设置小图片-->
+            <div class="homeimg3" onclick="window.open('./Detail.html','_self')"></div> <div class="right1"><h3>星巴克咖啡馆</h3><div>有人文气息,历史悠久</div></div></div>
+        <div class="home" style="float: left"><!--设置小图片-->
+            <div class="homeimg4" onclick="window.open('./Detail.html','_self')"></div> <div class="right1"><h3>研究所</h3> <div>位于英国，历史悠久</div> </div></div>
+
+    </div></div>
+
+<footer><br>
+    <div class="footword"><p>备案号：沪123345@19302010047</p>
+   <p> Contact imformation :<a href="mailto:19302010047@fudan.edu.cn">19302010047@fudan.edu.cn</a>.</p></div>
+    <img src="../img/footer.jpg" class="footimg" alt="页脚"><!--插入一张页脚图片-->
+</footer>
+<div class="refresh" onclick="alert('图片已刷新')">refresh</div>
+<div class="rTop" id="rTop" onClick="toTop()">返回顶部</div>
+
+</body>
+</html>
